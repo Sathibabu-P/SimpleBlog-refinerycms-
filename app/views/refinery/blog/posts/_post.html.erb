@@ -1,0 +1,66 @@
+<% flash.each do |key, value| %>
+ <div id='flash' class="flash flash_<%= key %>">
+   <%= value %>
+ </div>
+<% end %>
+
+<div class="mainblogsec section" id="mainblogsec">
+  <div class="widget Blog" data-version="1" id="Blog1">
+    <div class="blog-posts hfeed">
+            <div class="date-outer">  
+              <div class="date-posts">          
+          <div class="post-outer">
+            <article class="post hentry">
+              <a name="3278271531372541835"></a>
+              <header class="entry-header">
+                <h2 class="post-title entry-title">
+                  <%= @post.title %>
+                </h2>
+                <span>
+                      <time datetime="<%=l @post.published_at.to_date, :format => :default %>" class='posted_at'>
+                        <%= t('created_at', :scope => 'refinery.blog.shared.posts', :when => l(@post.published_at.to_date, :format => :short)) %>
+                      </time>
+                </span>
+              </header>
+              <div class="post-header-line-1"></div>
+              <div class="post-body entry-content">
+                 <%= @post.body.html_safe %>
+                <div style="clear: both;"></div>
+                <span>
+                    <% if Refinery::Blog::Post::ShareThis.enabled? %>
+                      <span class="st_sharethis" displayText="ShareThis"></span>
+                    <% end %>
+                </span>
+                <span>
+                    <% if (categories = @post.categories).any? %>
+                        <aside class='filled_in'>
+                          <%= t('filled_in', :scope => 'refinery.blog.posts.show') %>
+                          <% categories.each_with_index do |category, index| %>
+                            <%= link_to category.title, refinery.blog_category_path(category) -%><%= ',' if index < ((categories.length) - 1) %>
+                          <% end %>
+                        </aside>
+                      <% end %>
+                </span>
+                <span>
+                    <% if @post.source_url.present? %>
+                      <div class='blog_source'>
+                        <%= "#{t('source', :scope => 'refinery.blog.posts.show')}: " %>
+                        <%= link_to (@post.source_url_title.blank? ? @post.source_url : @post.source_url_title), @post.source_url %>
+                      </div>
+                    <% end %>
+                </span>
+                <span>
+                   <%= content_tag(:div, "#{t('by', :scope => 'refinery.blog.posts.show')} #{@post.author.username}", :class => "blog_author") if @post.author.present? %>
+                </span>
+              </div>
+            </article>
+          <div style="clear: both;"></div>
+          
+            </div>
+          </div>      
+    </div>
+  </div>
+</div>  
+
+<%#= render '/refinery/draft_page_message' unless @post.nil? or @post.live? -%>
+<%= render 'nav' if next_or_previous?(@post) %>

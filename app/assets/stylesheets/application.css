@@ -1,0 +1,32 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require refinery/formatting
+ *= require refinery/theme
+ *= require animate.css
+ *= require icomoon.css
+ *= require bootstrap.css
+ *= require superfish.css
+ *= require style.css
+ *= require style_1.css
+ *= require_self
+ //= require refinery/inquiries/inquiries
+ */
+
+
+
+.inquiries form input{
+	width : 100% !important;
+}
+.inquiries form .actions{
+	margin-left: 0px !important; 
+}

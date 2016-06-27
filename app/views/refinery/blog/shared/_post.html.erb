@@ -1,0 +1,68 @@
+<div class="mainblogsec section" id="mainblogsec">
+  <div class="widget Blog" data-version="1" id="Blog1">
+    <div class="blog-posts hfeed">
+      <div class="date-outer"> 
+      <div class="date-posts">        
+        <div class="post-outer">
+          <article class="post hentry">            
+            <header class="entry-header">
+             <h1><%= link_to post.title, refinery.blog_post_path(post) %></h1>
+            </header>
+            <div class="post-header-line-1"></div>
+            <div class="post-body entry-content">
+              <div id="summary4682800689275728420">
+              <!--   <img src="http://4.bp.blogspot.com/-ebNhMgPawZ4/Uw2ClvpTBgI/AAAAAAAALcQ/EGMgJ1j8t8s/s1600/post-img-13.jpg" class="pbtthumbimg"> -->
+                <div>                
+                   <% if blog_post_teaser_enabled? %>
+                    <%= blog_post_teaser(post) %>
+                  <% else %>
+                    <%= post.body.html_safe %>
+                  <% end %>
+                </div>
+              </div>
+
+              <div style="float:right;padding-right:10px;margin-top:10px;">
+                 <% if blog_post_teaser_enabled? && post.custom_teaser.present? %>
+                  <%= link_to t('read_more', :scope => 'refinery.blog.shared.posts'), refinery.blog_post_path(post) %>
+                  <% end %>
+              </div>
+
+              <div style="clear: both;"></div>
+            </div>
+            <footer class="nbtentry-meta">
+                <span>
+                  <%= t('created_at', :scope => 'refinery.blog.shared.posts', :when => l(post.published_at.to_date, :format => :short)) %>                    
+                </span>
+                <span>
+                  <%= "#{t('by', :scope => 'refinery.blog.posts.show')} #{post.author.username}" if post.author.present? %>.
+                </span>          
+                 
+                <% if (categories = post.categories.translated).any? %>
+                  <span class='filled_in'>
+                    <%= t('filled_in', :scope => 'refinery.blog.posts.show') %>
+                    <%=raw categories.collect { |category| link_to category.title, refinery.blog_category_path(category) }.to_sentence %>
+                  </span>
+                <% end %>
+            
+             
+                 <% if Refinery::Blog::Post.comments_allowed? %>
+                  <span class='comment_count'>
+                    <%= link_to "#{t('title', :scope => 'refinery.blog.posts.show.comments')} (#{post.comments.approved.count})", refinery.blog_post_path(post) << '#comments' %>
+                  </span>
+                <% end %>
+             
+             
+                <% if (tags = post.tags).any? %>
+                  <span class='tagged'>
+                    <%= t('tagged', :scope => 'refinery.blog.posts.show') %>
+                    <%=raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence %>
+                  </span>
+                <% end %>
+            </footer>
+          </article>
+          <div style="clear: both;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
