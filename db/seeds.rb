@@ -17,3 +17,6 @@ Refinery::Inquiries::Engine.load_seed
 
 # Added by Refinery CMS Venues extension
 Refinery::Calendar::Engine.load_seed
+
+# Added by Refinery CMS Portfolio Engine
+Refinery::Portfolio::Engine.load_seed

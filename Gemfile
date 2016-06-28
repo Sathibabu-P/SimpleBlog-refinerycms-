@@ -63,7 +63,7 @@ gem 'refinerycms', git: 'https://github.com/refinery/refinerycms', branch: 'mast
 gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
 gem 'refinerycms-inquiries', '~> 3.0.0'
 gem 'refinerycms-calendar',  git: 'https://github.com/refinery/refinerycms-calendar', branch: 'master'
-
+gem 'refinerycms-portfolio', github: 'refinery/refinerycms-portfolio', branch: 'master'
 
 gem 'quiet_assets', group: :development
 

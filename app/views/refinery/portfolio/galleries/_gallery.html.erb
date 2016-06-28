@@ -1,0 +1,24 @@
+  <div class="col-lg-4 col-md-4" id="<%= dom_id(gallery) %>">
+    <div class="fh5co-blog animate-box fadeInUp animated">
+      <%= link_to refinery.portfolio_gallery_path(gallery) do %>
+      <% if gallery.cover_image.present? %>
+        <div class="image">
+          <%= image_fu gallery.cover_image.image, 
+                ::Refinery::Portfolio.cover_image_thumb_size,
+                {:title => gallery.cover_image.title} %>
+        </div>
+      <% end %>
+      <div class="image-popup" href="#">
+        <div class="prod-title">
+          <h3><%= gallery.title %></h3>
+           <div class="details">
+            <% if ::Refinery::Portfolio.display_gallery_text %>
+              <%= raw gallery.description.truncate(250) %>
+            <% end %>
+          </div>
+          <!-- <a href="#" class="btn btn-primary">Read More</a> -->
+        </div>
+      </div> 
+       <% end %>
+    </div>
+  </div>

@@ -1,4 +1,16 @@
 GIT
+  remote: git://github.com/refinery/refinerycms-portfolio.git
+  revision: 86cf5c928c4d1d588cfe4b0922f47ec41058c33c
+  branch: master
+  specs:
+    refinerycms-portfolio (3.0.0)
+      friendly_id (~> 5.1.0)
+      friendly_id-globalize (>= 1.0.0.alpha2)
+      globalize (>= 4.0.0, < 5.2)
+      refinerycms-acts-as-indexed (~> 2.0.0)
+      refinerycms-core (~> 3.0.0)
+
+GIT
   remote: https://github.com/refinery/refinerycms
   revision: b3d2cb3c23806d16aedeac8eb84af1227ad515b0
   branch: master
@@ -120,6 +132,8 @@ GEM
       sass (>= 3.2)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
+    friendly_id-globalize (1.0.0.alpha2)
+      friendly_id (~> 5.1.0, < 6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     globalize (5.0.1)
@@ -312,6 +326,7 @@ DEPENDENCIES
   refinerycms-blog!
   refinerycms-calendar!
   refinerycms-inquiries (~> 3.0.0)
+  refinerycms-portfolio!
   refinerycms-wymeditor (~> 1.0, >= 1.0.6)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

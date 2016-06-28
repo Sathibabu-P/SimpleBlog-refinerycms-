@@ -31,3 +31,8 @@
 .inquiries form .actions{
 	margin-left: 0px !important; 
 }
+
+
+#galleries {
+    float: left !important; 
+}
