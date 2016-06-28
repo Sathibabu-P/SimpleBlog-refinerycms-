@@ -18,6 +18,7 @@
  *= require superfish.css
  *= require style.css
  *= require style_1.css
+  *= require calendar.css
  *= require_self
  //= require refinery/inquiries/inquiries
  */

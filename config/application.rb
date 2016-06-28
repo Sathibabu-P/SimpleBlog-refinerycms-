@@ -23,5 +23,6 @@ module Refinery
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.initialize_on_precompile = true
+    config.action_dispatch.tld_length = 2
   end
 end

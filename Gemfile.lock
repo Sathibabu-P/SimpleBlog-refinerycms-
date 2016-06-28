@@ -25,6 +25,15 @@ GIT
       refinerycms-settings (~> 3.0.0)
       seo_meta (~> 2.0.0.rc.1)
 
+GIT
+  remote: https://github.com/refinery/refinerycms-calendar
+  revision: f765a21caa38e847af2a07906d6f93c48dab53b5
+  branch: master
+  specs:
+    refinerycms-calendar (3.0.0)
+      friendly_id (~> 5.1.0)
+      refinerycms-core (~> 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -253,6 +262,8 @@ GEM
       rdoc (~> 4.0)
     seo_meta (2.0.0.rc.1)
       railties (>= 3.0.0)
+    simple_calendar (2.1.5)
+      rails (>= 3.0)
     speakingurl-rails (8.0.2)
       railties (>= 3.1)
     spring (1.7.1)
@@ -299,10 +310,12 @@ DEPENDENCIES
   refinerycms-acts-as-indexed (~> 2.0, >= 2.0.0)
   refinerycms-authentication-devise (~> 1.0)
   refinerycms-blog!
+  refinerycms-calendar!
   refinerycms-inquiries (~> 3.0.0)
   refinerycms-wymeditor (~> 1.0, >= 1.0.6)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simple_calendar (~> 2.0)
   spring
   sqlite3
   turbolinks

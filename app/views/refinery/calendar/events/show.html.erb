@@ -1,0 +1,71 @@
+
+<div class="container" style="margin-top:50px;">
+  
+
+<div class="mainblogsec section" id="mainblogsec">
+  <div class="widget Blog" data-version="1" id="Blog1">
+    <div class="blog-posts hfeed">
+            <div class="date-outer">  
+              <div class="date-posts">          
+          <div class="post-outer">
+            <article class="post hentry">
+              <a name="3278271531372541835"></a>
+              <header class="entry-header">
+                <h2 class="post-title entry-title">
+                 <% content_for :body_content_title do %>               
+                  <%= @event.title %>
+                <% end %>
+                </h2>
+              </header>
+              <% content_for :body do %>
+              <div class="post-header-line-1"></div>
+              <div class="post-body entry-content">
+                <h4><%#= @event.excerpt %></h4>
+                <%=raw @event.description %>
+                  <div style="clear: both;"></div>
+                  <span>
+                  </span>
+                    <h4><%= t('.details', default: 'Event Details') %></h4>
+                    <h5><%= @event.venue_name %></h5>
+                    <span>
+                      <time><%= t('.from', default: 'From') %> <%= @event.from.strftime('%B %d %Y') %>
+                      <%= t('.to', default: 'To') %> <%= @event.to.strftime("%B %d %Y") %></time>
+                   </span>
+                    <span>
+                      <% if @event.registration_link.present? %>
+                      <p><%= link_to t('.register', default: 'Register for this event'), @event.registration_link %></p>
+                    <% end -%>
+                   </span>
+                   <span>
+                     <% if @event.venue_address.present? %>
+                      <p><%= link_to t('.view_on_map', default: 'View it on a map'), "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{CGI::escape(@event.venue.address)}&ie=UTF8&z=16" %></p>
+                    <% end -%>
+                   </span>
+                    <nav id="next_prev_article">
+                    <%= link_to 'Events Home',
+                                refinery.calendar_events_path,
+                                :class => 'home' %>
+                  </nav><!-- /next_prev_article -->
+                <%end%>
+
+
+
+                <% content_for :stylesheets, stylesheet_link_tag('events') %>
+                <%= render '/refinery/content_page' %>
+
+                 
+
+              </div>
+
+
+
+            </article>
+
+
+          </div>
+        </div>
+
+      </div>
+
+
+    

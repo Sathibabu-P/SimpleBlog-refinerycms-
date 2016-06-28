@@ -25,6 +25,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+
+
+gem "simple_calendar", "~> 2.0"
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -57,6 +62,7 @@ end
 gem 'refinerycms', git: 'https://github.com/refinery/refinerycms', branch: 'master'
 gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
 gem 'refinerycms-inquiries', '~> 3.0.0'
+gem 'refinerycms-calendar',  git: 'https://github.com/refinery/refinerycms-calendar', branch: 'master'
 
 
 gem 'quiet_assets', group: :development
